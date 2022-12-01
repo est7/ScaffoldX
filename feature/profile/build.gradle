@@ -1,0 +1,10 @@
+plugins {
+    id("nowinandroid.android.feature")
+    //id("nowinandroid.android.library.compose")
+}
+
+android {
+    namespace = "com.template.scaffoldx.feature.profile"
+}
+
+dependencies {}

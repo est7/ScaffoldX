@@ -1,0 +1,40 @@
+plugins {
+    id("nowinandroid.android.application")
+    id("nowinandroid.android.application.compose")
+    id("nowinandroid.android.application.jacoco")
+    id("nowinandroid.android.hilt")
+    id("jacoco")
+    id("nowinandroid.firebase-perf")
+}
+
+android {
+    namespace 'com.template.scaffoldx'
+
+    defaultConfig {
+        applicationId "com.template.scaffoldx"
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation(project(":feature:feedrss"))
+    implementation(project(":feature:login"))
+    implementation(project(":feature:profile"))
+}
